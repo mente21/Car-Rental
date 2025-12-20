@@ -1,0 +1,9 @@
+{
+  "name": "car-rental-suite",
+  "version": "1.0.0",
+  "scripts": {
+    "build:client": "cd client && npm install && npm run build",
+    "install:server": "cd server && npm install",
+    "vercel-build": "npm run build:client && npm run install:server"
+  }
+}
