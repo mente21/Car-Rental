@@ -133,7 +133,7 @@ const Footer = () => {
         className="flex flex-col md:flex-row gap-2 items-center
       justify-between py-5"
       >
-        <p>@ {new Date().getFullYear()} Brand.All rights reserved.</p>
+        <p>@ {new Date().getFullYear()} Mente's Car Rental. All rights reserved.</p>
         <ul className="flex items-center gap-4">
           <li>
             <a href="#">Privacy</a>
