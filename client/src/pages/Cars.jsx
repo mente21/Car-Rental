@@ -63,7 +63,7 @@ const Cars = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col items-center py-20 bg-light max-md:px-4 "
+        className="flex flex-col items-center py-20 pt-36 bg-light max-md:px-4"
       >
         <Title
           title="Available cars"

@@ -55,7 +55,22 @@ const ManageBookings = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((booking, index) => (
+            {bookings.length === 0 ? (
+              <tr>
+                <td colSpan="5" className="p-12 text-center">
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">No Bookings Yet</h3>
+                    <p className="text-gray-500 text-sm">Customer bookings will appear here once they start renting your cars.</p>
+                  </div>
+                </td>
+              </tr>
+            ) : (
+              bookings.map((booking, index) => (
               <tr
                 key={index}
                 className="border-t border-borderColor text-gray-500"
@@ -112,7 +127,8 @@ const ManageBookings = () => {
                   )}
                 </td>
               </tr>
-            ))}
+            ))
+            )}
           </tbody>
         </table>
       </div>

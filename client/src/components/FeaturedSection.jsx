@@ -14,7 +14,7 @@ const FeaturedSection = () => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="flex flex-col items-center py-24 px-6 md:px-16 lg:px-24 xl:px-32"
+      className="flex flex-col items-center py-20 px-6 md:px-16 lg:px-24 xl:px-32 bg-gray-50/50"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const FeaturedSection = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="grid grid-cols-1 sm:grid-colls-2 lg:grid-cols-3 gap-8 mt-18"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 w-full max-w-7xl"
       >
         {cars.slice(0, 6).map((car) => (
           <motion.div
@@ -55,7 +55,7 @@ const FeaturedSection = () => {
         className="flex items-center justify-center gap-2 px-6 py-2 border
       border-borderColor hover:bg-gray-50 rounded-md mt-18 cursor-pointer"
       >
-        Explore all cars <img src={assets.arrow_icon} alt="arrow" />
+        View Complete Fleet <img src={assets.arrow_icon} alt="arrow" className="w-4 h-4" />
       </motion.button>
     </motion.div>
   );

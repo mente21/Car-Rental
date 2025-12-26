@@ -41,7 +41,7 @@ const CarDetails = () => {
     setCar(cars.find((car) => car._id === id));
   }, [cars, id]);
   return car ? (
-    <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-16">
+    <div className="px-6 md:px-16 lg:px-24 xl:px-32 pt-36 max-w-7xl mx-auto">
       <button
         onClick={() => navigate(-1)}
         className="flex items-center gap-2 mb-6"
@@ -175,9 +175,9 @@ const CarDetails = () => {
             />
           </div>
           <button
-            className="w-full bg-primary hover:bg-primary-dull 
-            transition-all py-3 font-medium text-white rounded-xl
-            cursor-pointer"
+            className="w-full bg-blue-600 hover:bg-blue-700 
+            transition-all py-3 font-bold text-white text-lg rounded-xl
+            cursor-pointer shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
           >
             Book Now
           </button>

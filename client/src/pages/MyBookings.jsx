@@ -30,13 +30,47 @@ const MyBookings = () => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-48 mt-16 text-sm max-w-7xl"
+      className="px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-48 mt-16 pt-36 text-sm max-w-7xl"
     >
       <Title
         title="My Bookings"
         subTitle="View and manage your all car bookings"
         align="left"
       />
+      
+      {!user ? (
+        <div className="flex flex-col items-center justify-center py-20 text-center">
+          <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Please Log In</h3>
+          <p className="text-gray-500 mb-6 max-w-md">You need to be logged in to view your bookings. Sign in to see your rental history and manage your reservations.</p>
+          <button 
+            onClick={() => window.location.href = '/'}
+            className="px-6 py-3 bg-primary text-white rounded-xl hover:bg-blue-700 transition-colors font-semibold"
+          >
+            Go to Home
+          </button>
+        </div>
+      ) : bookings.length === 0 ? (
+        <div className="flex flex-col items-center justify-center py-20 text-center">
+          <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">No Bookings Yet</h3>
+          <p className="text-gray-500 mb-6 max-w-md">You haven't made any car reservations yet. Browse our premium fleet and book your dream car today!</p>
+          <button 
+            onClick={() => window.location.href = '/cars'}
+            className="px-6 py-3 bg-primary text-white rounded-xl hover:bg-blue-700 transition-colors font-semibold"
+          >
+            Browse Cars
+          </button>
+        </div>
+      ) : (
       <div>
         {bookings.map((booking, index) => (
           <motion.div
@@ -124,6 +158,7 @@ const MyBookings = () => {
           </motion.div>
         ))}
       </div>
+      )}
     </motion.div>
   );
 };
